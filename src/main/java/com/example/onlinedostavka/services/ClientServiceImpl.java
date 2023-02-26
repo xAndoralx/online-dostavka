@@ -5,6 +5,7 @@ import com.example.onlinedostavka.repositories.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -25,5 +26,22 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public Optional<Client> getClientById(long id) {
         return clientRepository.findById(id);
+    }
+
+    @Override
+    @Transactional
+    public Client createClient(Client client) {
+        return clientRepository.save(client);
+    }
+
+    @Override
+    @Transactional
+    public Client updateClient (Client client) {
+        return clientRepository.save(client);
+    }
+    @Override
+    @Transactional
+    public void deleteClient (Client client) {
+        clientRepository.delete(client);
     }
 }
