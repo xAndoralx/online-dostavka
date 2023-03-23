@@ -18,6 +18,7 @@ public class ClientServiceImpl implements ClientService {
         this.clientRepository = clientRepository;
     }
 
+
     @Override
     public List<Client> getAllClients() {
         return clientRepository.findAll();
@@ -29,19 +30,17 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    @Transactional
     public Client createClient(Client client) {
+        return null;
+    }
+
+    @Override
+    @Transactional
+    public Client updateClient(Client client) {
         return clientRepository.save(client);
     }
 
     @Override
     @Transactional
-    public Client updateClient (Client client) {
-        return clientRepository.save(client);
-    }
-    @Override
-    @Transactional
-    public void deleteClient (Client client) {
-        clientRepository.delete(client);
-    }
+    public void deleteClient(Client client) {clientRepository.delete(client);}
 }

@@ -11,7 +11,6 @@ public class Menu {
     private long id;
     @Column(name = "fullname")
     private String fullname;
-
     public Menu() {
 
     }
@@ -24,19 +23,19 @@ public class Menu {
         this.id = id;
     }
 
-    public String getFullName() {
+    public String getFullname() {
         return fullname;
     }
 
-    public void setFullName(String fullName) {
-        this.fullname = fullName;
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
     }
 
     @Override
     public String toString() {
         return "Menu{" +
                 "id=" + id +
-                ", fullName='" + fullname + '\'' +
+                ", fullname='" + fullname + '\'' +
                 '}';
     }
 }

@@ -2,33 +2,29 @@ package com.example.onlinedostavka.shell;
 
 import com.example.onlinedostavka.entities.Client;
 import com.example.onlinedostavka.services.ClientService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
-import org.h2.tools.Console;
 import org.springframework.shell.standard.ShellOption;
+//import org.h2.tools.Console;
 
 import java.sql.SQLException;
+
 @ShellComponent
 public class AppEventsCommands {
     private final ClientService clientService;
-    @Autowired
+
     public AppEventsCommands(ClientService clientService) {
         this.clientService = clientService;
     }
 
-
-    /**
-     * Метод startConsoleH2 запускает консоль
-     */
-    @ShellMethod(value = "Start console H2", key = {"c", "console"})
-    public void startConsoleH2() {
-        try {
-            Console.main();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
+//    @ShellMethod(value = "Start console H2", key = {"c", "console"})
+//    public void startConsoleH2() {
+//        try {
+//            Console.OnlineDostavkaApplication();
+//        } catch (SQLException e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
     @ShellMethod(value = "Create a new Client of Menu in the library", key = {"cc", "createclient"})
     public  String createNewClient(@ShellOption(defaultValue = "Stephen Edwin king") String fullName) {
         return clientService.createClient(new Client(fullName)).toString();
@@ -46,7 +42,7 @@ public class AppEventsCommands {
     public void getUpgateClient(
             @ShellOption(defaultValue = "1") long id,
             @ShellOption(defaultValue = "Gianni Rodari") String fullName) {
-            clientService.updateClient(new Client(id, fullName));
+        clientService.updateClient(new Client(id, fullName));
     }
     @ShellMethod(value = "Get delete Client", key = {"gdc", "getdeleteclient"})
     public void getDeleteClient(

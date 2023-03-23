@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>clients</title>
+</head>
+<body>
+<p><img src="Menu.jpg" alt="Menu"></p>
+<tr th:each="car : ${clientList}">
+    <td th:text="${clients.getId()}"></td>
+    </br>
+</tr>
+</body>
+</html>

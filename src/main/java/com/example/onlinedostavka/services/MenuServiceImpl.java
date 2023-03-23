@@ -9,7 +9,6 @@ import java.util.List;
 
 @Service
 public class MenuServiceImpl implements MenuService {
-
     private final MenuRepository menuRepository;
     @Autowired
     public MenuServiceImpl(MenuRepository menuRepository) {

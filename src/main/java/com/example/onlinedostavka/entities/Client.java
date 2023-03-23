@@ -1,5 +1,4 @@
 package com.example.onlinedostavka.entities;
-
 import javax.persistence.*;
 
 @Entity
@@ -15,20 +14,16 @@ public class Client {
     public Client() {
 
     }
-
     public Client(String fullName) {
         this.fullname = fullName;
     }
-
     public Client(long id, String fullname) {
         this.id = id;
         this.fullname = fullname;
     }
-
     public long getId() {
         return id;
     }
-
     public void setId(long id) {
         this.id = id;
     }
@@ -45,7 +40,7 @@ public class Client {
     public String toString() {
         return "Client{" +
                 "id=" + id +
-                ", fullName='" + fullname + '\'' +
+                ", fullname='" + fullname + '\'' +
                 '}';
     }
 }

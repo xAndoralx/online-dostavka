@@ -1,10 +1,11 @@
 package com.example.onlinedostavka.entities;
 
+
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table (name = "Client_Order")
+@Table(name = "Client_Order")
 public class Client_Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,24 +29,12 @@ public class Client_Order {
         return id;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
     public String getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public Client getClient() {
         return client;
-    }
-
-    public void setClient(Client client) {
-        this.client = client;
     }
 
     @Override
